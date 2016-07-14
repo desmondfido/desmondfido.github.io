@@ -27,7 +27,7 @@
 				console.log( item, loaded, total );
 			};
 
-			var loader = new THREE.ObjectLoader();
+			var loader = new THREE.JSONLoader();
 			loader.load( 'mesh1.obj', function ( object ) {
 					scene.add( object );
 				});
