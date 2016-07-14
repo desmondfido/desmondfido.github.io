@@ -21,7 +21,7 @@
 			scene.add(camera);
 			
 			cube = new THREE.BoxGeometry( 300, 300, 300 );
-			material = new THREE.MeshLambertMaterial( { color: 0x0000ff , wireframe:true });
+			material = new THREE.MeshLambertMaterial( {color: 0x0000ff});
 			mesh = new THREE.Mesh( cube, material );
 			scene.add( mesh );
 			
@@ -41,8 +41,14 @@
 			var pointLight = new THREE.PointLight(0xFFFFFF);
 			pointLight.position.x = 10;
 			pointLight.position.y = 100;
-			pointLight.position.x = 1000;
+			pointLight.position.z = 1000;
 			scene.add(pointLight);
+			
+			var pointLight1 = new THREE.PointLight(0xFFFFFF);
+			pointLight.position.x = -10;
+			pointLight.position.y = -100;
+			pointLight.position.z = -1000;
+			scene.add(pointLight1);
 			
 			
 			renderer = new THREE.WebGLRenderer();
@@ -61,7 +67,7 @@
 			requestAnimationFrame(animate);
 			
 			mesh.rotation.x += 0.02;
-			mesh.rotation.y -= 0.02;
+			mesh.rotation.y += 0.02;
 			
 			
 			renderer.render(scene, camera);
