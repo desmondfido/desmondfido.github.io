@@ -20,20 +20,22 @@
 			camera.position.z = 1000;
 			scene.add(camera);
 			
-			cube = new THREE.BoxGeometry( 300, 300, 300 );
+			//cube = new THREE.BoxGeometry( 300, 300, 300 );
 			material = new THREE.MeshLambertMaterial( { color: 0xffff00 }, {wireframe:true });
-			mesh = new THREE.Mesh( cube, material );
-			scene.add( mesh );
-			/**var manager = new THREE.LoadingManager();
+			//mesh = new THREE.Mesh( cube, material );
+			//scene.add( mesh );
+			
+			var manager = new THREE.LoadingManager();
 			manager.onProgress = function( item, loaded, total ) 
 			{
 				console.log( item, loaded, total );
 			};
 
 			var loader = new THREE.JSONLoader();
-			loader.load( 'mesh1.obj', function ( object ) {
-					scene.add( object );
-				});**/
+			loader.load( 'mesh1.json', function ( object ) {
+			mesh = new THREE.Mesh( cube, material );
+			scene.add( mesh );
+				});
 	
 			
 			var pointLight = new THREE.PointLight(0xFFFFFF);
