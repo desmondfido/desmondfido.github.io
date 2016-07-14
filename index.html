@@ -27,9 +27,14 @@
 			
 			var loader = new THREE.JSONLoader();
 			loader.load( "mesh1.json", function( geometry ) {
+			//mesh = new THREE.Mesh( geometry, material );
+			//scene.add( mesh );
+			});
+			
+			
 			mesh = new THREE.Mesh( geometry, material );
 			scene.add( mesh );
-			});
+			console.log(mesh)
 				
 			var pointLight = new THREE.PointLight(0xFFFFFF);
 			pointLight.position.x = 10;
