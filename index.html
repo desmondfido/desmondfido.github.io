@@ -20,8 +20,11 @@
 			camera.position.z = 1000;
 			scene.add(camera);
 			
-			
-			var manager = new THREE.LoadingManager();
+			cube = new THREE.BoxGeometry( 1, 1, 1 );
+			material = new THREE.MeshBasicMaterial( { color: 0xffff00 }, {wireframe:true });
+			mesh = new THREE.Mesh( cube, material );
+			scene.add( mesh );
+			/**var manager = new THREE.LoadingManager();
 			manager.onProgress = function( item, loaded, total ) 
 			{
 				console.log( item, loaded, total );
@@ -30,7 +33,7 @@
 			var loader = new THREE.JSONLoader();
 			loader.load( 'mesh1.obj', function ( object ) {
 					scene.add( object );
-				});
+				});**/
 	
 			
 			var pointLight = new THREE.PointLight(0xFFFFFF);
