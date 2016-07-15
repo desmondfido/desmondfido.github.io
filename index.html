@@ -232,7 +232,7 @@ Click <a href="javascript:init(true);">here</a> to show the model anyway, it may
   loadModel();
 
   function loadModel() {
-    var model_tok = model + "/model.tok";
+    var model_tok = model + "examples/model.tok";
     var tokFile = new XMLHttpRequest();
     tokFile.overrideMimeType('text/plain');
     tokFile.onreadystatechange = function() {
@@ -260,7 +260,7 @@ Click <a href="javascript:init(true);">here</a> to show the model anyway, it may
     //Use existing canvas element rather than letting Three.js create one
     var canvas = document.getElementById("canvas");
     //Use a pre-rendered background if provided
-    document.body.style.backgroundImage = "url(" + model + "/background.png)";
+    document.body.style.backgroundImage = "url(" + model + "examples/background.png)";
 
     //Detect renderer
     if (Detector.webgl) {
